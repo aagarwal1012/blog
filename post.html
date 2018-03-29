@@ -20,6 +20,12 @@
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    div.disqus_thread {
+    max-width:66.6667%;
+    align-self: center;
+    }
+    </style>
 
   </head>
 
@@ -109,13 +115,8 @@
               <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
               <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
           </div>
-        </div>
-      </div>
-    </article>
-
-    <br>
-
-    <div class="col-lg-8 col-md-10 mx-auto"></div>
+        </div><br>
+    <div id = "disqus_thread"></div>
 <script>
 
 /**
@@ -135,7 +136,10 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-       <br>                     
+       <br>
+
+      </div>
+    </article>             
   <hr>
     <!-- Footer -->
     <footer>
