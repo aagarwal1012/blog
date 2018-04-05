@@ -9,12 +9,15 @@
     enable_page_level_ads: true
   });
 </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <title>Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,17 +65,16 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/tensorflow.png')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="post-heading">
-              <h1>Man must explore, and this is exploration at its greatest</h1>
-              <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+              <h1>Tensorflow-gpu installation Windows 10</h1>
+              <h2 class="subheading">Using Anaconda</h2>
               <span class="meta">Posted by
-                <a href="https://ayushagarwal.ml">Ayush Agarwal</a>
-                on March 29, 2018</span>
+                <a href="https://ayushagarwal.ml">Ayush Agarwal</a></span>
             </div>
           </div>
         </div>
@@ -84,42 +86,100 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+            <p>On November 9, 2015 Google open sourced a software library called TensorFlow. TensorFlow is a software library used for Machine learning and Deep learning for numerical computation using data flow graphs. It can run on multiple CPUs and GPUs.<br>
+            Since deep learning algorithms runs on huge data sets, it is extremely beneficial to run these algorithms on CUDA enabled Nvidia GPUs to achieve faster execution.</p>
 
-            <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+            <p>When I wanted to install TensorFlow GPU version on my machine, I browsed through internet and tensorflow.org for steps to download and setup. I could not find any good and clear source for setting up TensorFLow on local machine with GPU support for Windows. Most of the information available online was for Linux or Mac OS. Most search results online said there is no support for TensorFlow with GPU on Windows yet and few suggested to use virtual machines on Windows but again the would not utilize GPU.
+            </p>
 
-            <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+            <p>Then I decided to explore myself and see if that is still the case or has Google recently released support for TensorFlow with GPU on Windows. After refering few pages on tensorflow.org I was able to setup TensorFlow GPU version on my Windows machine with ease. So now it is possible to have TensorFlow running on Windows with GPU support.</p>
 
-            <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+            <h2 class="section-heading">Requirements</h2><br>
 
-            <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+            <ul>
+              <li>CUDA® Toolkit 9.0. </li>
+              <li>The NVIDIA drivers associated with CUDA Toolkit 9.0.</li>
+              <li>cuDNN v7.0 for CUDA® Toolkit 9.0.</li>
 
-            <h2 class="section-heading">The Final Frontier</h2>
+              <li>GPU card with CUDA Compute Capability 3.0 or higher for building from source and 3.5 or higher for our binaries. See <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA documentation</a> for a list of supported GPU cards.</li>
+            </ul>
 
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+            <h2 class="section-heading">Installing the CUDA Drivers</h2>
 
-            <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-            <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-            <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-            <h2 class="section-heading">Reaching for the Stars</h2>
-
-            <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+            <p>At the time of writing, the TensorFlow-gpu builds support CUDA 9.0. If you visit the <a href="https://developer.nvidia.com/cuda-toolkit">CUDA downloads site here</a>, you'll notice that it will take you to the latest version (right now it's 9.1), so be sure to download the right version of the driver by selecting the Legacy Resources link at the bottom of the <a href="https://developer.nvidia.com/cuda-downloads">downloads</a>  screen:</p>
 
             <a href="#">
-              <img class="img-fluid" src="img/post-sample-image.jpg" alt="">
+              <img class="img-fluid" src="img/cuda.png" alt="">
             </a>
-            <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
 
-            <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+            <p>Of course, as CUDA and TensorFlow get updated, these versions will change. If you have the incorrect version, TensorFlow will warn you (I'll show you where later in this article) and you'll have to go back to this site to get the correct version. So please refer the <a href="https://www.tensorflow.org/install/install_windows">tensorflow documentation</a>.</p>
 
-            <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+            <h2 class="section-heading">Installing the CuDNN Libraries</h2>
 
-            <p>Placeholder text by
-              <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
-              <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+            <p>The CuDNN libraries are an update to CUDA for deep neural nets and are used by TensorFlow to accelerate deep learning on NVidia GPUs. <a href="https://developer.nvidia.com/cudnn">You can download them from here</a>. You'll have to sign up for an NVidia developer account first, but it's pretty quick and costs nothing. Once you've signed in, you'll see a variety of CuDNN downloads. Here's where you'll have to match to the version of CUDA that you downloaded in the previous section. So, for example, I used CUDA 9.0, so I made sure I used a CuDNN that matches both this and the required version you saw in the last step (in my case version 7) — I chose cuDNN v7.0.5 for CUDA 9.0.</p>
+
+            <a href="#">
+              <img class="img-fluid" src="img/cudnn.png" alt="">
+            </a>
+
+            <p>This will download a ZIP file with several folders, each containing the CuDNN files (one DLL, one header, and one library). Find your CUDA installation... should be at something like:
+              <pre><code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0</code></pre>You'll see the directories from the ZIP file are also in this directory, i.e. there's a bin, an include, a lib, etc. Copy the files from the ZIP to the relevant directory. So, for example, drag cudnn64_7.dll to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin, and do the same for the others.</p>
+
+            <h2 class="section-heading">Environmental variables</h2>
+            <p>Ensure after installing CUDA toolkit, the CUDA_HOME is set in the environmental variables. If not then you need to add it manually..</p>
+            <a href="#">
+              <img class="img-fluid" src="img/cuda_path.png" alt="">
+            </a>
+            <p>And path variables as..</p>
+            <a href="#">
+              <img class="img-fluid" src="img/envariable.png" alt="">
+            </a>
+
+            <h2 class="section-heading">Installing Tensorflow-gpu</h2>
+            <p>We will install Anaconda as it helps us to easily manage separate environments for specific distributions of Python, without disturbing the version of python installed on your system. You can install from here 
+            <b><a href="https://www.anaconda.com/download/">Anaconda</a></b>. </p>
+            <h5 >Create conda environment</h5>
+            <p>Create new environment, with the name tensorflow-gpu and python version 3.5.2
+            <pre><code class="language-css">C:> conda create -n tensorflow pip python=3.5</code></pre>
+            </p>
+            <h5>Activate the environment</h5>
+            <p>
+              Activate the conda environment by issuing the following command:
+              <pre><code class="language-css">C:> conda activate tensorflow</code></pre>
+            </p>
+
+            <h5>Install Tensorflow-gpu</h5>
+            <p>
+              Issue the appropriate command to install TensorFlow inside your conda environment. To install the GPU version of TensorFlow, enter the following command (on a single line):
+              <pre><code class="language-css">(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu </code></pre>
+            </p>
+
+            <h2 class="section-heading">Validation</h2>
+            <p>Now, its all done setting up and installing tensorflow-gpu. Let's test and validate your installation.</p>
+            <p>Start Anaconda and activate your tensorflow environment by the lines:
+            <pre><code class="language-css">C:> conda activate tensorflow</code></pre>
+            </p>
+            <p>Invoke python from your shell as follows:
+              <pre><code class="language-css">$ python</code></pre>
+            </p>
+
+            <p>
+              Enter the following short program inside the python interactive shell:
+
+              <pre><code class="language-css">>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+              </code></pre>
+            </p>
+
+            <p>If the system outputs the following, then you are ready to begin writing TensorFlow programs:</p>
+            <a href="#">
+              <img class="img-fluid" src="img/tf_output.png" alt="">
+            </a>
+
+            <p>If you find any difficulty in the tutorial or any problem or error in installation and validation do not hesitate to post a comment below.</p>
+
           </div>
         </div><br>
     <div id = "disqus_thread"></div>
@@ -191,6 +251,8 @@ s.setAttribute('data-timestamp', +new Date());
 
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
   </body>
 
 </html>
