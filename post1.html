@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7443410827793980",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    div.disqus_thread {
+    max-width:66.6667%;
+    align-self: center;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="https://ayushagarwal.ml">Ayush Agarwal</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/tensorflow.png')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Tensorflow-gpu installation Windows 10</h1>
+              <h2 class="subheading">Using Anaconda</h2>
+              <span class="meta">Posted by
+                <a href="https://ayushagarwal.ml">Ayush Agarwal</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p>On November 9, 2015 Google open sourced a software library called TensorFlow. TensorFlow is a software library used for Machine learning and Deep learning for numerical computation using data flow graphs. It can run on multiple CPUs and GPUs.<br>
+            Since deep learning algorithms runs on huge data sets, it is extremely beneficial to run these algorithms on CUDA enabled Nvidia GPUs to achieve faster execution.</p>
+
+            <p>When I wanted to install TensorFlow GPU version on my machine, I browsed through internet and tensorflow.org for steps to download and setup. I could not find any good and clear source for setting up TensorFLow on local machine with GPU support for Windows. Most of the information available online was for Linux or Mac OS. Most search results online said there is no support for TensorFlow with GPU on Windows yet and few suggested to use virtual machines on Windows but again the would not utilize GPU.
+            </p>
+
+            <p>Then I decided to explore myself and see if that is still the case or has Google recently released support for TensorFlow with GPU on Windows. After refering few pages on tensorflow.org I was able to setup TensorFlow GPU version on my Windows machine with ease. So now it is possible to have TensorFlow running on Windows with GPU support.</p>
+
+            <h2 class="section-heading">Requirements</h2><br>
+
+            <ul>
+              <li>CUDA® Toolkit 9.0. </li>
+              <li>The NVIDIA drivers associated with CUDA Toolkit 9.0.</li>
+              <li>cuDNN v7.0 for CUDA® Toolkit 9.0.</li>
+
+              <li>GPU card with CUDA Compute Capability 3.0 or higher for building from source and 3.5 or higher for our binaries. See <a href="https://developer.nvidia.com/cuda-gpus">NVIDIA documentation</a> for a list of supported GPU cards.</li>
+            </ul>
+
+            <h2 class="section-heading">Installing the CUDA Drivers</h2>
+
+            <p>At the time of writing, the TensorFlow-gpu builds support CUDA 9.0. If you visit the <a href="https://developer.nvidia.com/cuda-toolkit">CUDA downloads site here</a>, you'll notice that it will take you to the latest version (right now it's 9.1), so be sure to download the right version of the driver by selecting the Legacy Resources link at the bottom of the <a href="https://developer.nvidia.com/cuda-downloads">downloads</a>  screen:</p>
+
+            <a href="#">
+              <img class="img-fluid" src="img/cuda.png" alt="">
+            </a>
+
+            <p>Of course, as CUDA and TensorFlow get updated, these versions will change. If you have the incorrect version, TensorFlow will warn you (I'll show you where later in this article) and you'll have to go back to this site to get the correct version. So please refer the <a href="https://www.tensorflow.org/install/install_windows">tensorflow documentation</a>.</p>
+
+            <h2 class="section-heading">Installing the CuDNN Libraries</h2>
+
+            <p>The CuDNN libraries are an update to CUDA for deep neural nets and are used by TensorFlow to accelerate deep learning on NVidia GPUs. <a href="https://developer.nvidia.com/cudnn">You can download them from here</a>. You'll have to sign up for an NVidia developer account first, but it's pretty quick and costs nothing. Once you've signed in, you'll see a variety of CuDNN downloads. Here's where you'll have to match to the version of CUDA that you downloaded in the previous section. So, for example, I used CUDA 9.0, so I made sure I used a CuDNN that matches both this and the required version you saw in the last step (in my case version 7) — I chose cuDNN v7.0.5 for CUDA 9.0.</p>
+
+            <a href="#">
+              <img class="img-fluid" src="img/cudnn.png" alt="">
+            </a>
+
+            <p>This will download a ZIP file with several folders, each containing the CuDNN files (one DLL, one header, and one library). Find your CUDA installation... should be at something like:
+              <pre><code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0</code></pre>You'll see the directories from the ZIP file are also in this directory, i.e. there's a bin, an include, a lib, etc. Copy the files from the ZIP to the relevant directory. So, for example, drag cudnn64_7.dll to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin, and do the same for the others.</p>
+
+            <h2 class="section-heading">Environmental variables</h2>
+            <p>Ensure after installing CUDA toolkit, the CUDA_HOME is set in the environmental variables. If not then you need to add it manually..</p>
+            <a href="#">
+              <img class="img-fluid" src="img/cuda_path.png" alt="">
+            </a>
+            <p>And path variables as..</p>
+            <a href="#">
+              <img class="img-fluid" src="img/envariable.png" alt="">
+            </a>
+
+            <h2 class="section-heading">Installing Tensorflow-gpu</h2>
+            <p>We will install Anaconda as it helps us to easily manage separate environments for specific distributions of Python, without disturbing the version of python installed on your system. You can install from here 
+            <b><a href="https://www.anaconda.com/download/">Anaconda</a></b>. </p>
+            <h5 >Create conda environment</h5>
+            <p>Create new environment, with the name tensorflow-gpu and python version 3.5.2
+            <pre><code class="language-css">C:> conda create -n tensorflow pip python=3.5</code></pre>
+            </p>
+            <h5>Activate the environment</h5>
+            <p>
+              Activate the conda environment by issuing the following command:
+              <pre><code class="language-css">C:> conda activate tensorflow</code></pre>
+            </p>
+
+            <h5>Install Tensorflow-gpu</h5>
+            <p>
+              Issue the appropriate command to install TensorFlow inside your conda environment. To install the GPU version of TensorFlow, enter the following command (on a single line):
+              <pre><code class="language-css">(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu </code></pre>
+            </p>
+
+            <h2 class="section-heading">Validation</h2>
+            <p>Now, its all done setting up and installing tensorflow-gpu. Let's test and validate your installation.</p>
+            <p>Start Anaconda and activate your tensorflow environment by the lines:
+            <pre><code class="language-css">C:> conda activate tensorflow</code></pre>
+            </p>
+            <p>Invoke python from your shell as follows:
+              <pre><code class="language-css">$ python</code></pre>
+            </p>
+
+            <p>
+              Enter the following short program inside the python interactive shell:
+
+              <pre><code class="language-css">>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+              </code></pre>
+            </p>
+
+            <p>If the system outputs the following, then you are ready to begin writing TensorFlow programs:</p>
+            <a href="#">
+              <img class="img-fluid" src="img/tf_output.png" alt="">
+            </a>
+
+            <p>If you find any difficulty in the tutorial or any problem or error in installation and validation do not hesitate to post a comment below.</p>
+
+          </div>
+        </div><br>
+    <div id = "disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ayushagarwal-ml.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+       <br>
+
+      </div>
+    </article>             
+  <hr>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/aagarwal9782?lang=en">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/aagarwal1012">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/aagarwal1012">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Personal Blog of <a href="https://ayushagarwal.ml">Ayush Agarwal</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+  </body>
+
+</html>
