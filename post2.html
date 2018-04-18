@@ -104,6 +104,9 @@
             <p>In order to achieve this, a Bluetooth module is interfaced to the Arduino board at the receiver end while on the transmitter end, a GUI application on the cell phone sends ON/OFF commands to the receiver where loads are connected. By touching the specified location on the GUI, the loads can be turned ON/OFF remotely through this technology.
             </p>
 
+            <p>You can the demostration video in the following link : </p>
+            <iframe width="640" height="360" src="https://www.youtube.com/embed/1ieyT6df8ec?ecver=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
             <h2 class="section-heading">Description of the Project</h2><br>
             
             <p>
@@ -135,12 +138,12 @@
                 The list of components mentioned here are specifically for controlling 4 different loads.
             
             <ul>
-                <li>Arduino UNO</li>
-                <li>HC – 05 Bluetooth Module</li>
-                <li>5 V Relay X 4</li>
-                <li>Prototyping board (Bread board)</li>
-                <li>Connecting wires</li>
-                <li>Smartphone or tablet (Bluetooth enabled)</li>
+                <li>Arduino UNO &nbsp &nbsp&nbsp&nbsp&nbsp(<a href="https://amzn.to/2qDZMmy">Click Here to Buy!</a>)</li>
+                <li>HC – 05 Bluetooth Module &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(<a href="https://amzn.to/2JVPYfq">Click Here to Buy!</a>)</li>
+                <li>5 V Relay X 4 &nbsp&nbsp&nbsp&nbsp&nbsp(<a href="https://amzn.to/2qIf60z">Click Here to Buy!</a>)</li>
+                <li>Bread board  &nbsp&nbsp&nbsp&nbsp&nbsp(<a href=" https://amzn.to/2qG8Veg">Click Here to Buy!</a>)</li>
+                <li>Connecting wires   &nbsp&nbsp&nbsp&nbsp&nbsp(<a href="https://amzn.to/2HG8lEp">Click Here to Buy!</a>)</li>
+                <li>Bluetooth enabled smartphone or tablet</li>
                 <li>5V Power Source</li>
             </ul>
 
@@ -155,7 +158,33 @@
             
             <h2 class="section-heading">Design And Implementation</h2>
 
-            <p>Given below is the circuit diagram of the setup : </p>
+            <p>As we are not able to get a 4 channel relay board so we made it by ourselves. Components required are as follows :</p>
+            <ul>
+            	<li>One Pref. board</li>
+            	<li>Four 5 volt DC Relay</li>
+            	<li>Four leds for indicating purpose</li>
+            	<li>Four 220 and 100 ohm resistor</li>
+            	<li>Four diodes of 1N4007</li>
+            	<li>Four 2N2222 npn transistor</li>
+            	<li>Four two-pin block connector</li>
+            	<li>Some jumper wires</li>
+            </ul>
+
+            <p>Circuit diagram for the one relay module is as follows :</p>
+
+            <a href="#">
+              <img class="img-fluid" src="img/relay_cicuit.jpg" alt="">
+            </a>
+
+            <p>And what we made is as follows but you can use the pre made relay board from market.</p>
+
+            <a href="#">
+              <img class="img-fluid" src="img/relay_board.jpg" alt="">
+            </a>
+            <br><br>
+            <h5>Final Circuit</h5>
+
+            <p>For the sake of simplicity, we replaced the the relay module made by us with the pre-built 4 channel relay in the final circuit diagram.  </p>
 
             <a href="#">
               <img class="img-fluid" src="img/circuit.png" alt="">
@@ -168,57 +197,64 @@ int relay1=10;
 int relay2=11;
 int relay3=12;
 int relay4=13;
-char val;
+int val;
+
 void setup() {
-pinMode(relay1,OUTPUT);
-pinMode(relay2,OUTPUT);
-pinMode(relay3,OUTPUT);
-pinMode(relay4,OUTPUT);
-digitalWrite(relay1,HIGH);
-digitalWrite(relay2,HIGH);
-digitalWrite(relay3,HIGH);
-digitalWrite(relay4,HIGH);
-Serial.begin(9600);
+ 
+  Serial.begin(9600);
+  pinMode(relay1,OUTPUT);
+  pinMode(relay2,OUTPUT);
+  pinMode(relay3,OUTPUT);
+  pinMode(relay4,OUTPUT);
+  digitalWrite(relay1,HIGH);
+  digitalWrite(relay2,HIGH);
+  digitalWrite(relay3,HIGH);
+  digitalWrite(relay4,HIGH);
+
 }
 void loop() {
-//check data serial from bluetooth android App
-while (Serial.available() > 0){
-val = Serial.read();
-Serial.println(val);
+ 
+  //check data serial from bluetooth android App
+  while (Serial.available() > 0){
+    val = Serial.read();
+    Serial.println(val);
+  }
+ 
+  //Relay is on
+  if( val == 1 ) {
+    digitalWrite(relay1,HIGH); }
+  else if( val == 2 ) {
+    digitalWrite(relay2,HIGH); }  else if( val == 3 ) {
+    digitalWrite(relay3,HIGH); }
+  else if( val == 4 ) {
+    digitalWrite(relay4,HIGH); }
+    
+  //relay all on
+  else if( val == 0 ) {
+    digitalWrite(relay1,HIGH);
+    digitalWrite(relay2,HIGH);
+    digitalWrite(relay3,HIGH);
+    digitalWrite(relay4,HIGH);
+  }
+  //relay is off
+  else if( val == 5 ) {
+    digitalWrite(relay1,LOW); }
+  else if( val == 6 ) {
+    digitalWrite(relay2,LOW); }
+  else if( val == 7 ) {
+    digitalWrite(relay3,LOW); }
+  else if( val == 8 ) {
+    digitalWrite(relay4,LOW); }
+    
+  //relay all off
+  else if( val == 10 ) {
+    digitalWrite(relay1,LOW);
+    digitalWrite(relay2,LOW);
+    digitalWrite(relay3,LOW);
+    digitalWrite(relay4,LOW);
+  }
 }
-//Relay is on
-if( val == '1' ) {
-digitalWrite(relay1,HIGH); }
-else if( val == '2' ) {
-digitalWrite(relay2,HIGH); }
-else if( val == '3' ) {
-digitalWrite(relay3,HIGH); }
-else if( val == '4' ) {
-digitalWrite(relay4,HIGH); }
-//relay all on
-else if( val == '0' ) {
-digitalWrite(relay1,HIGH);
-digitalWrite(relay2,HIGH);
-digitalWrite(relay3,HIGH);
-digitalWrite(relay4,HIGH);
-}
-//relay is off
-else if( val == '5' ) {
-digitalWrite(relay1,LOW); }
-else if( val == '6' ) {
-digitalWrite(relay2,LOW); }
-else if( val == '7' ) {
-digitalWrite(relay3,LOW); }
-else if( val == '8' ) {
-digitalWrite(relay4,LOW); }
-//relay all off
-else if( val == '10' ) {
-digitalWrite(relay1,LOW);
-digitalWrite(relay2,LOW);
-digitalWrite(relay3,LOW);
-digitalWrite(relay4,LOW);
-}
-}</code></pre> 
+</code></pre> 
             </p>
 
             <h5>Android Application</h5>
