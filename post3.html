@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117131653-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-117131653-1');
+</script>
+
+    
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7443410827793980",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title" content="Image Steganography Library for Android">
+    <meta name="description" content="Image Steganography Library for Android">
+    <meta name="keywords" content="image-steganography-library-android, android-library, android, library, steganography, image-steganography, encryption">
+    <meta name="author" content="Ayush Agarwal">
+    <META NAME="geo.position" CONTENT="26.9124; 75.7873">
+    <META NAME="geo.placename" CONTENT="Jaipur">
+    <META NAME="geo.region" CONTENT="302015">
+
+    <title>Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+    div.disqus_thread {
+    max-width:66.6667%;
+    align-self: center;
+    }
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="https://ayushagarwal.ml">Ayush Agarwal</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Image Steganography</h1>
+              <h2 class="subheading">Library for Android</h2>
+              <span class="meta">Posted by
+                <a href="https://ayushagarwal.ml">Ayush Agarwal</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <img class="img-fluid" src="img/cover.png"/>
+
+<p></p>
+
+<div align= "center"><img src="https://img.shields.io/badge/platform-Android-brightgreen.svg?style=flat-square" alt="Platform" /> <img src="https://img.shields.io/badge/API-16%2B-blue.svg?style=flat-square" alt="API" /> <img src="https://img.shields.io/badge/License-MIT-red.svg?style=flat-square" alt="License: MIT" />
+</div>
+
+<h1 id="imagesteganography">Image Steganography</h1>
+
+<p>Steganography is the process of hiding a secret message within a larger one in such a way that someone  cannot know the presence or contents of the hidden message. Although related, Steganography is not to be confused with Encryption, which is the process of making a message unintelligible—Steganography attempts to hide the existence of communication.
+The main advantage of steganography algorithm is because of its simple security mechanism. Because the steganographic message is integrated invisibly and covered inside other harmless sources, it is very difficult to detect the message without knowing
+the existence and the appropriate encoding scheme .</p>
+
+<h1 id="proposedalgorithm">Proposed Algorithm</h1>
+
+<p>The algorithm is more dedicated towards the algorithm proposed by Rosziati Ibrahim and Teoh Suk Kuan in their <a href="https://arxiv.org/ftp/arxiv/papers/1112/1112.2809.pdf">Research Paper</a> published on February 25, 2011.</p>
+
+<h2 id="encodingalgorithm">Encoding Algorithm</h2>
+
+<ul>
+<li>Firstly, the secret message that is extracted is <code>compressed</code> as the contents in the compressed string will significantly hard to detect and read, furthermore it reduces the size of string.</li>
+
+<li>Secondly, the compressed string is <code>encrypted</code> with the secret key.</li>
+
+<li>Finally, <code>encoding</code> the encrypted message in the image. It uses <code>LSB steganographic embedding</code> to encode data into an image. Once the message is encoded the process stops.</li>
+</ul>
+
+<h3 id="lsbleastsignificantbitembedding">LSB(Least Significant Bit) Embedding</h3>
+
+<p>The LSB is the lowest significant bit in the byte value of the image pixel.
+The  LSB  based  image  steganography  embeds  the  secret  in the  least  significant  bits  of  pixel  values  of  the  cover  image (CVR).
+The concept of LSB Embedding is simple. It exploits the fact that the level of precision in many image formats is far greater than that perceivable by average human vision. Therefore, an altered image with slight variations in its colors will be indistinguishable from the original by a human being, just by looking at it. In conventional LSB technique, which requires eight bytes of pixels to store 1byte of secret data but in proposed LSB technique, just four bytes of pixels are sufficient to hold one message byte. Rest of the bits in the pixels remains the same.
+Following shows the bit level interpretation of the algorithm :  </p>
+
+<img class="img-fluid" src="img/lsb1.png"/>
+
+<h2 id="decodingalgorithm">Decoding Algorithm</h2>
+
+<ul>
+<li><p>Firstly, <code>decode</code> the message from the encrypted image using LSB decoding.</p></li>
+
+<li><p>Secondly, <code>decrypt</code> the compressed message from the decoded message using the secret key.</p></li>
+
+<li><p>Finally, <code>decompress</code> the message to get the original compressed message.   </p></li>
+</ul>
+
+<p>Consider the following encoding, it is totally undetectable by human eyes.</p>
+
+<img class="img-fluid" src="img/original_encoded.png"/>
+
+<h1 id="usage">Usage</h1>
+
+<p>Just add the following dependency in your app's <code>build.gradle</code></p>
+
+<pre><code class="language-css">dependencies {
+      implementation 'com.github.aagarwal1012:Image-Steganography-Library-Android:v1.0beta'
+}
+</code></pre><br>
+
+<h2 id="howtoencodemessageintoanimage">How to encode message into an image ?</h2>
+
+<p><strong>Note :</strong> Your Activity class should implements <code>TextEncodingCallback</code> interface and also contains its <code>override</code> methods.</p>
+
+<pre><code class="language-css">public class MainActivity extends AppCompatActivity implements TextEncodingCallback 
+</code></pre>
+
+<ul>
+<li><p>Firstly, instantiate the <code>ImageSteganography</code> object and pass the values <code>Message</code>, <code>Secret Key</code> and <code>Image Bitmap</code> to the constructor.</p>
+
+<pre><code class="language-css">ImageSteganography imageSteganography = new ImageSteganography(message, 
+                                      secret_key, 
+                                      original_image);
+</code></pre></li>
+
+<li><p>Secondly, instantiate the <code>TextEncoding</code> object and pass the values <code>Activity</code> and <code>TextEncodingCallback</code> object to the constructor.</p>
+
+<pre><code class="language-css">TextEncoding textEncoding = new TextEncoding(MainActivity.this,
+                          MainActivity.this);
+</code></pre></li>
+
+<li><p>Finally, execute our <code>encoding</code> task.</p>
+
+<pre><code class="language-css">textEncoding.execute(imageSteganography);
+</code></pre>
+
+<p><strong>Note</strong> : By default a <code>ProgressDialog</code> will appear in the process of text encoding.</p></li>
+</ul>
+
+<h4 id="overridemethods">Override Methods</h4>
+
+<ul>
+<li><p><code>OnStartTextEncoding()</code> : In this method you can whatever by the start of text encoding process.  </p>
+
+<pre><code class="language-css">@Override
+  public void onStartTextEncoding() {
+      //Whatever you want to do at the start of text encoding
+  }
+</code></pre></li>
+
+<li><p><code>onCompleteTextEncoding()</code> : After the completion of text encoding, this method is called and gives result.</p>
+
+<pre><code class="language-css">@Override
+  public void onCompleteTextEncoding(ImageSteganography result) {<pre><code>  //After the completion of text encoding.
+
+  //result object is instantiated 
+  this.result = result;
+
+  if (result != null &amp;amp;&amp;amp; result.isEncoded()){
+
+      //encrypted image bitmap is extracted from result object
+      encoded_image = result.getEncrypted_image();
+
+      //set text and image to the UI component.
+      textView.setText("Encoded");
+      imageView.setImageBitmap(encoded_image);
+</code></pre>  }
+</code></pre></li>
+</ul>
+
+<h2 id="howtodecodemessagefromanimage">How to decode message from an image ?</h2>
+
+<p><strong>Note :</strong> Your Activity class should implements <code>TextDecodingCallback</code> interface and also contains its <code>override</code> methods.</p>
+
+<pre><code class="language-css">public class MainActivity extends AppCompatActivity implements TextDecodingCallback 
+</code></pre>
+
+<ul>
+<li><p>Firstly, instantiate the <code>ImageSteganography</code> object and pass the values <code>Secret Key</code> and <code>Image Bitmap</code> to the constructor.</p>
+
+<pre><code class="language-css">ImageSteganography imageSteganography = new ImageSteganography(secret_key,
+                                      original_image);
+</code></pre></li>
+
+<li><p>Secondly, instantiate the <code>TextDecoding</code> object and pass the values <code>Activity</code> and <code>TextDecodingCallback</code> object to the constructor.</p>
+
+<pre><code class="language-css">TextDecoding textDecoding = new TextDecoding(MainActivity.this, 
+                          MainActivity.this);
+</code></pre></li>
+
+<li><p>Finally, execute our <code>decoding</code> task.</p>
+
+<pre><code class="language-css">textDecoding.execute(imageSteganography);
+</code></pre>
+
+<p><strong>Note</strong> : By default a <code>ProgressDialog</code> will appear in the process of text decoding.</p></li>
+</ul>
+
+<h4 id="overridemethods-1">Override Methods</h4>
+
+<ul>
+<li><p><code>OnStartTextDecoding()</code> : In this method you can whatever by the start of text decoding process.  </p>
+
+<pre><code class="language-css">@Override
+  public void onStartTextDecoding() {
+      //Whatever you want to do at the start of text encoding
+  }
+</code></pre></li>
+
+<li><p><code>onCompleteTextDecoding()</code> : After the completion of text decoding, this method is called and gives result.</p>
+
+<pre><code class="language-css">@Override
+  public void onCompleteTextEncoding(ImageSteganography result) {<pre><code>  //After the completion of text encoding.
+
+  //result object is instantiated 
+  this.result = result;
+
+  if (result != null){
+
+      /* If result.isDecoded() is false, it means no Message was found in                     the image. */
+      if (!result.isDecoded())
+          textView.setText("No message found");
+
+      else{
+          /* If result.isSecretKeyWrong() is true, it means that secret key provided                 is wrong. */ 
+          if (!result.isSecretKeyWrong()){
+              //set the message to the UI component.
+              textView.setText("Decoded");
+              message.setText("" + result.getMessage());
+          }
+          else {
+              textView.setText("Wrong secret key");
+          }
+      }
+  }
+  else {
+      //If result is null it means that bitmap is null
+      textView.setText("Select Image First");
+  }
+</code></pre>  }
+</code></pre></li>
+</ul>
+
+<h1 id="documentation">Documentation</h1><br>
+
+<h4 id="imagesteganographyclass">ImageSteganography Class</h4><br>
+
+<table border = "1px" cellpadding = " 5px">
+<thead >
+<tr>
+<th align="left">Java attribute</th>
+<th align="left">Java set methods</th>
+<th align="left">Description</th>
+<th align="center">Default Value</th>
+</tr>
+</thead>
+<tbody >
+<tr>
+<td align="left">Message</td>
+<td align="left">setMessage(...) , getMessage()</td>
+<td align="left">Set the value of message, Get the value of message.</td>
+<td align="center">Null</td>
+</tr>
+<tr>
+<td align="left">Secret_Key</td>
+<td align="left">setSecret_key(...)</td>
+<td align="left">Set the value of secret key.</td>
+<td align="center">Null</td>
+</tr>
+<tr>
+<td align="left">Image</td>
+<td align="left">setImage(...)</td>
+<td align="left">Set the value of image.</td>
+<td align="center">Null</td>
+</tr>
+<tr>
+<td align="left">Encoded_Image</td>
+<td align="left">getEncoded_image()</td>
+<td align="left">Get the value of encoded image after text encoding.</td>
+<td align="center">Null</td>
+</tr>
+<tr>
+<td align="left">Encoded</td>
+<td align="left">isEncoded()</td>
+<td align="left">Check that the encoding is over or not</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="left">Decoded</td>
+<td align="left">isDecoded()</td>
+<td align="left">Check that the decoding is over or not.</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td align="left">SecretKeyWrong</td>
+<td align="left">isSecretKeyWrong()</td>
+<td align="left">Check that the secret key provided was right or wrong but after decoding was done.</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table><br>
+<h1 id="wanttocontribute">Want to contribute !</h1>
+
+<p></p>
+
+<p>This is the well <code>documented</code> library. I have documented each and every method that I have used, so go to the <a href="https://github.com/aagarwal1012/Image-Steganography-Library-Android">GitHub</a> and have a good read to the code and suggest some changes and new feature to be added in the library. <br />
+Feel free to <a href = "https://github.com/aagarwal1012/Image-Steganography-Library-Android/issues">open an issue</a>.</p>
+<p>If you find any problem leave a comment below.</p>
+
+          </div>
+        </div><br>
+    <div id = "disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://ayushagarwal-ml.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+       <br>
+
+      </div>
+    </article>             
+  <hr>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/aagarwal9782?lang=en">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/aagarwal1012">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/aagarwal1012">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Personal Blog of <a href="https://ayushagarwal.ml">Ayush Agarwal</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+  </body>
+
+</html>
