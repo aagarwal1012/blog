@@ -1,8 +1,8 @@
 # SITE CONFIGURATION
 baseurl: "/blog"
-url: "https://ayushagarwal.ml/"
-title: Blog # site's title
-description: "Ayush Agarwal's blog" # used by search engines
+url: "https://ayushagarwal.ml/blog/"
+title: Ayush Agarwal's blog # site's title
+description: "Personal blog of Ayush Agarwal" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
