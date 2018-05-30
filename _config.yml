@@ -1,37 +1,37 @@
 # SITE CONFIGURATION
-baseurl: "/Type-on-Strap"
-url: "https://sylhare.github.io"
-title: Type on Strap # site's title
-description: "A website with blog posts and pages" # used by search engines
+baseurl: "/blog"
+url: "https://ayushagarwal.ml/"
+title: Blog # site's title
+description: "Ayush Agarwal's blog" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type on Strap # blog's title
-  avatar: assets/img/triangle.svg
+  title: "Ayush Agarwal" # blog's title
+  avatar: assets/img/logo.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
-  header_text_feature_image: assets/img/pexels/triangular.jpeg
+    <p></p><br><br><br><br>     
+  header_text_feature_image: assets/img/pexels/computer.jpeg
   footer_text: >
-   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+   Personal Blog of <a href = "https://ayushagarwal.ml/blog/about/">Ayush Agarwal</a>
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "aagarwal9782@gmail.com"
   behance:
   bitbucket:
   dribbble:
-  facebook:
+  facebook: "aagarwal1012"
   flickr:
   gitlab:
-  github: "sylhare"
-  google_plus:
-  instagram:
+  github: "aagarwal1012"
+  google_plus: 115147319139238316033
+  instagram: "superman_ayush"
   keybase:
   linkedin:  # Full URL
   pinterest:
@@ -40,10 +40,10 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: # "twitter username"
+  twitter: "aagarwal9782"
   vimeo:
   wordpress:
-  youtube:
+  youtube: "UCQsnIvnC7zeOhSImDOJmESA"
   
   # Sharing options
   share_buttons:
@@ -53,14 +53,14 @@ theme_settings:
     tumblr:
     pinterest:
     pocket:
-    reddit: true
+    reddit: 
     linkedin:
     wordpress:
     email: true
 
   # Scripts / Features 
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
+  google_analytics: "UA-117131653-1"
+  disqus_shortname: true
   katex: true # Enable if using math markup
   
   special_page:
