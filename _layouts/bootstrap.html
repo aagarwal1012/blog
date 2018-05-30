@@ -212,7 +212,7 @@ button, input {
       <p> {{ content }}</p>
     </div>
 
-    <form name="sentMessage" id="contactForm" method="POST">
+    <form name="sentMessage" id="contactForm" method="POST" action="https://formspree.io/aagarwal9782@gmail.com">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>Name</label>
@@ -253,7 +253,7 @@ button, input {
 
         </article>
 <script>
-    var contactForm = document.querySelector('form'),
+    var contactForm = document.querySelector('xform'),
     name = contactForm.querySelector('[name="Name"]'),
     phone = contactForm.querySelector('[name="Phone Number"]'),
     inputEmail = contactForm.querySelector('[name="Sender\'s email"]'),
