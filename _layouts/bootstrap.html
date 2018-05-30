@@ -271,8 +271,9 @@ button, input {
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
 
       xhr.send(
-        "Name=" + name.value +
-        "&Email=" + inputEmail.value +
+        
+        "Email=" + inputEmail.value +
+       "&Name=" + name.value +
         "&Phone Number=" + phone.value +  
         "&Message=" + textAreaMessage.value);
 
