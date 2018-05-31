@@ -8,6 +8,7 @@ layout: default
     {{ page.date | date: "%B %-d, %Y" }}
     {% if page.author %} - {{ page.author }}{% endif %}
     </p>
+    <p style = "color: rgba(56,56,56,0.5); font-size: 0.8em; letter-spacing: 0.1em; margin: 0; ">{{ page.time }}</p>
   </header>
   <section class="post-content">{{ content }}</section>
   

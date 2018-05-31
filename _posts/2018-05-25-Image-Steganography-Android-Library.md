@@ -4,6 +4,7 @@ title: Image Steganography Library for Android
 description : In this post I will be discussing about some steganographic algorithms and how to use my own image steganography android library.
 tags: [Image-Steganography, Android-library, Encoding]
 author : Ayush Agarwal
+time : 8 minutes read
 ---
 
 Steganography is the process of hiding a secret message within a larger one in such a way that someone  cannot know the presence or contents of the hidden message. Although related, Steganography is not to be confused with Encryption, which is the process of making a message unintelligible—Steganography attempts to hide the existence of communication.

@@ -4,6 +4,7 @@ title: Home Automation using Arduino and Bluetooth module
 description : In this post I will be discussing about how to develop a home automation system using an Arduino board with Bluetooth module being remotely controlled by any Android OS smartphone. In order to achieve this, a Bluetooth module is interfaced to the Arduino board at the receiver end while on the transmitter end, a GUI application on the cell phone sends ON/OFF commands to the receiver where loads are connected. By touching the specified location on the GUI, the loads can be turned ON/OFF remotely through this technology.
 author : Ayush Agarwal
 tags: [Home-automation, Arduino, Bluetooth-module]
+time : 15 minutes read
 ---
 
 [![]({{ site.baseurl }}/assets/img/post/home_automation.png)](#) 

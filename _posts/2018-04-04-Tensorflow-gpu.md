@@ -6,6 +6,7 @@ thumbnail: "assets/img/post/tensorflow.png"
 description : In this post I will be discussing about how to install tensorflow-gpu in Windows 10 using Anaconda.
 tags: [Tensorflow-gpu, Tensorflow]
 author : Ayush Agarwal
+time : 20 minutes read
 ---
 
 On November 9, 2015 Google open sourced a software library called TensorFlow. TensorFlow is a software library used for Machine learning and Deep learning for numerical computation using data flow graphs. It can run on multiple CPUs and GPUs.  

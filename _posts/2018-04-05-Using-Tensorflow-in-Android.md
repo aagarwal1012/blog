@@ -4,6 +4,7 @@ title: Using Tensorflow in Android
 description : In this post I will be discussing about how to use the saved machine learning model in android so as to apply machine learning in mobile applications.
 tags: [Tensorflow, Android]
 author : Ayush Agarwal
+time : 10 minutes read
 ---
 
 As we all know Google has open-sourced a library called TensorFlow that can be used in Android for implementing Machine Learning.
