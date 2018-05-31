@@ -9,7 +9,7 @@ description: "Personal blog of Ayush Agarwal" # used by search engines
 theme_settings:
   # Meta
   title: "Ayush Agarwal" # blog's title
-  avatar: assets/img/logo.svg
+  avatar: assets/img/mylogo.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
 
