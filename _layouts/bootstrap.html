@@ -212,18 +212,19 @@ button, input {
       <p> {{ content }}</p>
     </div>
 
-    <form name="sentMessage" id="contactForm" >
+    <form name="sentMessage" id="contactForm" action="https://formspree.io/aagarwal9782@gmail.com"
+      method="POST">
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>Name</label>
-                <input name="Sender's name" class="form-control" placeholder="Name" id="name" required="" data-validation-required-message="Please enter your name." type="text">
+                <input name="Name" class="form-control" placeholder="Name" id="name" required="" data-validation-required-message="Please enter your name." type="text">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
             <div class="control-group">
               <div class="form-group floating-label-form-group controls">
                 <label>Email Address</label>
-                <input name="Sender's email" class="form-control" placeholder="Email Address" id="email" required="" data-validation-required-message="Please enter your email address." type="email">
+                <input name="Email" class="form-control" placeholder="Email Address" id="email" required="" data-validation-required-message="Please enter your email address." type="email">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
@@ -252,38 +253,6 @@ button, input {
         </div>
 
         </article>
-<script>
-    var contactForm = document.querySelector('form'),
-    name = contactForm.querySelector('[id="name"]'),
-    phone = contactForm.querySelector('[name="Phone Number"]'),
-    inputEmail = contactForm.querySelector('[name="Sender\'s email"]'),
-    textAreaMessage = contactForm.querySelector('[name="Message"]'),
-    sendButton = contactForm.querySelector('button');
+<script src="{{ site.baseurl }}/assets/js/vendor/jqBootstrapValidation.js" ></script>
+<script src="{{ site.baseurl }}/assets/js/vendor/contact_me.js" ></script>
 
-    sendButton.addEventListener('click', function(event){
-      event.preventDefault();
-
-      sendButton.innerHTML = 'sending..';
-
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', '//formspree.io/aagarwal9782@gmail.com', true);
-      xhr.setRequestHeader("Accept", "application/json")
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
-
-      xhr.send(
-        
-        "Email=" + inputEmail.value +
-       "&Name=" + name.value +
-        "&Phone Number=" + phone.value +  
-        "&Message=" + textAreaMessage.value);
-
-      xhr.onloadend = function (res) {
-        if (res.target.status === 200){
-          sendButton.innerHTML = 'Message sent!';
-        }
-        else {
-          sendButton.innerHTML = 'Error!';
-        }
-      }
-    });
-</script>
