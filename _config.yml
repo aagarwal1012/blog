@@ -26,7 +26,7 @@ theme_settings:
   # Meta
   title: "Ayush Agarwal" # blog's title
   avatar: assets/img/mylogo.png
-  favicon: assets/favicon.ico
+  favicon: assets/favicon1.ico
   gravatar: # Email MD5 hash
 
   # Header and footer text

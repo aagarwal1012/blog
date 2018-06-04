@@ -27,7 +27,7 @@ layout: default
            <!-- For contact me  -->
           
 
-
+       </div>
     </section>
 
     
@@ -250,9 +250,13 @@ button, input {
           </form>
 
   </div>
-        </div>
+
+        <!-- Tag list for portfolio -->
+  {% capture tag_list %}{{ page.tags | join: "|"}}{% endcapture %}
+  {% include tags_list.html tags=tag_list %}
 
         </article>
-<script src="{{ site.baseurl }}/assets/js/vendor/jqBootstrapValidation.js" ></script>
-<script src="{{ site.baseurl }}/assets/js/vendor/contact_me.js" ></script>
+
+<script src="/blog/assets/js/vendor/jqBootstrapValidation.js" ></script>
+<script src="/blog/assets/js/vendor/contact_me.js" ></script>
 
