@@ -9,8 +9,9 @@ author : Ayush Agarwal
 time : 20 minutes read
 ---
 
-On November 9, 2015 Google open sourced a software library called TensorFlow. TensorFlow is a software library used for Machine learning and Deep learning for numerical computation using data flow graphs. It can run on multiple CPUs and GPUs.  
-Since deep learning algorithms runs on huge data sets, it is extremely beneficial to run these algorithms on CUDA enabled Nvidia GPUs to achieve faster execution.
+On November 9, 2015 Google open sourced a software library called `TensorFlow`. TensorFlow is a software library used for Machine learning and Deep learning for numerical computation using data flow graphs. It can run on multiple CPUs and GPUs.  
+
+> Since deep learning algorithms runs on huge data sets, it is extremely beneficial to run these algorithms on CUDA enabled Nvidia GPUs to achieve faster execution.
 
 When I wanted to install TensorFlow GPU version on my machine, I browsed through internet and tensorflow.org for steps to download and setup. I could not find any good and clear source for setting up TensorFLow on local machine with GPU support for Windows. Most of the information available online was for Linux or Mac OS. Most search results online said there is no support for TensorFlow with GPU on Windows yet and few suggested to use virtual machines on Windows but again the would not utilize GPU.
 
@@ -39,7 +40,9 @@ The CuDNN libraries are an update to CUDA for deep neural nets and are used by T
 
 This will download a ZIP file with several folders, each containing the CuDNN files (one DLL, one header, and one library). Find your CUDA installation... should be at something like:
 
-    C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0
+```css
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0
+```
 
 You'll see the directories from the ZIP file are also in this directory, i.e. there's a bin, an include, a lib, etc. Copy the files from the ZIP to the relevant directory. So, for example, drag cudnn64_7.dll to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin, and do the same for the others.
 
@@ -61,19 +64,25 @@ We will install Anaconda as it helps us to easily manage separate environments f
 
 Create new environment, with the name tensorflow-gpu and python version 3.5.2
 
-    C:> conda create -n tensorflow pip python=3.5
+```css
+C:> conda create -n tensorflow pip python=3.5
+```
 
 ##### Activate the environment
 
 Activate the conda environment by issuing the following command:
 
-    C:> conda activate tensorflow
+```css
+C:> conda activate tensorflow
+```
 
 ##### Install Tensorflow-gpu
 
 Issue the appropriate command to install TensorFlow inside your conda environment. To install the GPU version of TensorFlow, enter the following command (on a single line):
 
-    (tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu 
+```css
+(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow-gpu 
+```
 
 ## Validation
 
@@ -81,18 +90,24 @@ Now, its all done setting up and installing tensorflow-gpu. Let's test and valid
 
 Start Anaconda and activate your tensorflow environment by the lines:
 
-    C:> conda activate tensorflow
+```css
+C:> conda activate tensorflow
+```
 
 Invoke python from your shell as follows:
 
-    $ python
+```css
+$ python
+```
 
 Enter the following short program inside the python interactive shell:
 
-    >>> import tensorflow as tf
-    >>> hello = tf.constant('Hello, TensorFlow!')
-    >>> sess = tf.Session()
-    >>> print(sess.run(hello))
+```css
+>>> import tensorflow as tf
+>>> hello = tf.constant('Hello, TensorFlow!')
+>>> sess = tf.Session()
+>>> print(sess.run(hello))
+```
 
 If the system outputs the following, then you are ready to begin writing TensorFlow programs:
 

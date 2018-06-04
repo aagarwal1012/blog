@@ -11,7 +11,7 @@ time : 15 minutes read
 
 The main objective of this project is to develop a home automation system using an Arduino board with Bluetooth being remotely controlled by any Android OS smartphone. As technology is advancing so houses are also getting smarter. Modern houses are gradually shifting from conventional switches to centralized control system, involving remote controlled switches. Presently, conventional wall switches located in different parts of the house makes it difficult for the user to go near them to operate. Even more it becomes more difficult for the elderly or physically handicapped people to do so. Remote controlled home automation system provides a most modern solution with smartphones. Moreover home automation systems in today's market costs more than Rs. 50,000 so also wanted to make a low budget home automation system.
 
-In order to achieve this, a Bluetooth module is interfaced to the Arduino board at the receiver end while on the transmitter end, a GUI application on the cell phone sends ON/OFF commands to the receiver where loads are connected. By touching the specified location on the GUI, the loads can be turned ON/OFF remotely through this technology.
+>  In order to achieve this, a Bluetooth module is interfaced to the Arduino board at the receiver end while on the transmitter end, a GUI application on the cell phone sends ON/OFF commands to the receiver where loads are connected. By touching the specified location on the GUI, the loads can be turned ON/OFF remotely through this technology.
 
 You can the demostration video in the following link :
 
@@ -69,86 +69,90 @@ And what we made is as follows but you can use the pre made relay board from mar
 
 [![]({{ site.baseurl }}/assets/img/post/relay_board.jpg)](#)   
 
-##### Final Circuit
+#### Final Circuit
 
 For the sake of simplicity, we replaced the the relay module made by us with the pre-built 4 channel relay in the final circuit diagram.
 
 [![]({{ site.baseurl }}/assets/img/post/circuit.png)](#)   
 
-##### Arduino Code
+#### Arduino Code
 
 Given below is the Arduino code that you can compile and program in your Arduino UNO.
 
-    //using ports 10, 11, 12, 13
-    int relay1=10;
-    int relay2=11;
-    int relay3=12;
-    int relay4=13;
-    int val;
+```groovy
+//using ports 10, 11, 12, 13
+int relay1 = 10;
+int relay2 = 11;
+int relay3 = 12;
+int relay4 = 13;
+int val;
 
-    void setup() {
+void setup() {
 
-      Serial.begin(9600);
-      pinMode(relay1,OUTPUT);
-      pinMode(relay2,OUTPUT);
-      pinMode(relay3,OUTPUT);
-      pinMode(relay4,OUTPUT);
-      digitalWrite(relay1,HIGH);
-      digitalWrite(relay2,HIGH);
-      digitalWrite(relay3,HIGH);
-      digitalWrite(relay4,HIGH);
+  Serial.begin(9600);
+  pinMode(relay1,OUTPUT);
+  pinMode(relay2,OUTPUT);
+  pinMode(relay3,OUTPUT);
+  pinMode(relay4,OUTPUT);
+  digitalWrite(relay1,HIGH);
+  digitalWrite(relay2,HIGH);
+  digitalWrite(relay3,HIGH);
+  digitalWrite(relay4,HIGH);
 
-    }
-    void loop() {
+}
+void loop() {
 
-      //check data serial from bluetooth android App
-      while (Serial.available() > 0){
-        val = Serial.read();
-        Serial.println(val);
-      }
+  //check data serial from bluetooth android App
+  while (Serial.available() > 0){
+    val = Serial.read();
+    Serial.println(val);
+  }
 
-      //Relay is on
-      if( val == 1 ) {
-        digitalWrite(relay1,HIGH); }
-      else if( val == 2 ) {
-        digitalWrite(relay2,HIGH); }  else if( val == 3 ) {
-        digitalWrite(relay3,HIGH); }
-      else if( val == 4 ) {
-        digitalWrite(relay4,HIGH); }
+  //Relay is on
+  if( val == 1 ) {
+    digitalWrite(relay1,HIGH); }
+  else if( val == 2 ) {
+    digitalWrite(relay2,HIGH); }  else if( val == 3 ) {
+    digitalWrite(relay3,HIGH); }
+  else if( val == 4 ) {
+    digitalWrite(relay4,HIGH); }
 
-      //relay all on
-      else if( val == 0 ) {
-        digitalWrite(relay1,HIGH);
-        digitalWrite(relay2,HIGH);
-        digitalWrite(relay3,HIGH);
-        digitalWrite(relay4,HIGH);
-      }
-      //relay is off
-      else if( val == 5 ) {
-        digitalWrite(relay1,LOW); }
-      else if( val == 6 ) {
-        digitalWrite(relay2,LOW); }
-      else if( val == 7 ) {
-        digitalWrite(relay3,LOW); }
-      else if( val == 8 ) {
-        digitalWrite(relay4,LOW); }
+  //relay all on
+  else if( val == 0 ) {
+    digitalWrite(relay1,HIGH);
+    digitalWrite(relay2,HIGH);
+    digitalWrite(relay3,HIGH);
+    digitalWrite(relay4,HIGH);
+  }
+  //relay is off
+  else if( val == 5 ) {
+    digitalWrite(relay1,LOW); }
+  else if( val == 6 ) {
+    digitalWrite(relay2,LOW); }
+  else if( val == 7 ) {
+    digitalWrite(relay3,LOW); }
+  else if( val == 8 ) {
+    digitalWrite(relay4,LOW); }
 
-      //relay all off
-      else if( val == 10 ) {
-        digitalWrite(relay1,LOW);
-        digitalWrite(relay2,LOW);
-        digitalWrite(relay3,LOW);
-        digitalWrite(relay4,LOW);
-      }
-    }
+  //relay all off
+  else if( val == 10 ) {
+    digitalWrite(relay1,LOW);
+    digitalWrite(relay2,LOW);
+    digitalWrite(relay3,LOW);
+    digitalWrite(relay4,LOW);
+  }
+}
+```
 
-##### Android Application
+#### Android Application
 
 I had built a basic bluetooth based app that just sends the information to the bluetooth controler. Here is the GitHub [link](https://github.com/aagarwal1012/Home-Automation).
 
 You can clone my app using git using the command in git bash:
 
-    git clone https://github.com/aagarwal1012/Home-Automation.git
+```groovy
+git clone https://github.com/aagarwal1012/Home-Automation.git
+```
 
 Android apk can be downloaded form [**Here!**](https://drive.google.com/file/d/1-G7GkjjILzkK2z8o3YBheVA99TwepST5/view?usp=sharing)
 
