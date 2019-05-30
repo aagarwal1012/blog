@@ -9,9 +9,8 @@ social:
   links: 
     - https://www.facebook.com/aagarwal1012
     - https://github.com/aagarwal1012
-    - https://plus.google.com/115147319139238316033
-    - https://www.instagram.com/superman_ayush/
-    - https://twitter.com/aagarwal9782
+    - https://www.instagram.com/instinct_3_/
+    - https://twitter.com/aagarwal1012
     - https://www.youtube.com/channel/UCQsnIvnC7zeOhSImDOJmESA
     - https://www.linkedin.com/in/aagarwal1012/
 facebook: 
@@ -19,7 +18,7 @@ facebook:
   publisher: 100001961887919
   admins: 100001961887919
 twitter: 
-  username: aagarwal9782
+  username: aagarwal1012
 author: Ayush Agarwal
 
 # THEME-SPECIFIC CONFIGURATION
@@ -47,17 +46,17 @@ theme_settings:
   flickr:
   gitlab:
   github: "aagarwal1012"
-  google_plus: 115147319139238316033
-  instagram: "superman_ayush"
+  google_plus:
+  instagram: "instinct_3_"
   keybase:
   linkedin:  https://www.linkedin.com/in/aagarwal1012/
   pinterest:
-  reddit:
+  reddit: "aagarwal1012"
   soundcloud:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "aagarwal9782"
+  twitter: "aagarwal1012"
   vimeo:
   wordpress:
   youtube: "UCQsnIvnC7zeOhSImDOJmESA"
@@ -70,8 +69,8 @@ theme_settings:
     tumblr:
     pinterest:
     pocket:
-    reddit: 
-    linkedin:
+    reddit: true
+    linkedin: true
     wordpress:
     email: true
 
