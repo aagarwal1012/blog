@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
 baseurl: "/blog"
-url: "https://ayushagarwal.ml/"
+url: "https://aagarwal1012.github.io/"
 title: Ayush Agarwal's blog # site's title
 logo: /assets/img/logo.png
 description: "Personal blog of Ayush Agarwal" # used by search engines
@@ -34,7 +34,7 @@ theme_settings:
     <p></p><br><br><br><br>     
   header_text_feature_image: assets/img/pexels/computer.jpeg
   footer_text: >
-   Personal Blog of <a href = "https://ayushagarwal.ml/blog/about/">Ayush Agarwal</a>
+   Personal Blog of <a href = "https://aagarwal1012.github.io/blog/about/">Ayush Agarwal</a>
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
@@ -75,7 +75,7 @@ theme_settings:
     email: true
 
   # Scripts / Features 
-  google_analytics: "UA-117131653-1"
+  google_analytics: ""
   disqus_shortname: true
   katex: true # Enable if using math markup
   
